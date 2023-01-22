@@ -22,11 +22,11 @@ streamlit.dataframe(fruits_to_show)
 
 # add a new header
 streamlit.header("Fruityvice Fruit Advice!")
-fruit_choice = streamlit.text_input('What fruit would you like information about?','jackfruit')
+fruit_choice = streamlit.text_input('What fruit would you like information about?','kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "jackfruit")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 
 # below code line is removed
 # streamlit.text(fruityvice_response.json()) #just writes the data to the screen
@@ -47,3 +47,5 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
 
+fruit_choice = streamlit.text_input('What fruit would you like to add?','jackfruit')
+streamlit.write('Thanks for adding', fruit_choice)
