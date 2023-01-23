@@ -1,6 +1,6 @@
 import streamlit
-import pandas
-import requests
+#import pandas
+#import requests
 import snowflake.connector
 from urllib.error import URLError
 
@@ -40,7 +40,8 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # output the data in the screen as a table
 streamlit.dataframe(fruityvice_normalized)
 
-#streamlit.stop()
+# don't run anything past whilst we trouble shoot
+streamlit.stop()
 
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
