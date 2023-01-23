@@ -44,7 +44,7 @@ try:
 # don't run anything past whilst we trouble shoot
 #streamlit.stop()
 
-streamlit.header("Fruit load list contains:")
+streamlit.header("The Fruit load list contains:")
 # Snowflake related functions
 def get_fruit_lod_list():
     with my_cnx.cursor() as my_cur:
@@ -56,11 +56,3 @@ if streamlit.button('Get Fruit_Load_List'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     my_data_rows = get_fruit_load_list()
     streamlit.dataframe(my_data_rows)
-
-streamlit.header("The fruit load list contains:")
-
-fruit_choice = streamlit.text_input('What fruit would you like to add?','jackfruit')
-streamlit.write('Thanks for adding', fruit_choice)
-
-#streamlit.write('Thanks for adding', add_my_fruit)
-my_cur.execute("insert into fruit_load_list values('from streamlit')")
