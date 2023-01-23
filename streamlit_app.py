@@ -40,19 +40,6 @@ try:
     streamlit.dataframe(back_from_function)
 
     
-# streamlit.write('The user entered ', fruit_choice)
-
-
-
-
-# below code line is removed
-# streamlit.text(fruityvice_response.json()) #just writes the data to the screen
-
-# take the json version of the response and normalise it
-
-
-# output the data in the screen as a table
-
 
 # don't run anything past whilst we trouble shoot
 streamlit.stop()
